@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monke GIF API</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        body {
+            font-family: Roboto;
+        }
+
+        .container{
+            max-width: 800px;
+            margin: 10vh auto;
+            width: 95%;
+        }
+
+        h1{
+            font-size: 2.5em;
+        }
+
+        .subtitle{
+            font-size: 1.2em;
+        }
+
+        button{
+            margin: 20px 0;
+            background: #f7630c;
+            color: #252525;
+            font-family: Roboto;
+            font-weight: bold;
+            padding: .5em 1em;
+            border: 0;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        button:hover{
+            background: #fb8c4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦧 Monke GIF API</h1>
+        <p class="subtitle">A simple API for all the monkes out there to enjoy.</p>
+        <p>If you are feeling down and want to raise your spirit, or simply want to feed your
+            monke addiction that we all have, look no further than monke GIF API.
+        </p>
+        <div class="example">
+            <code><a href="http://monkeapi.ddns.net/random">http://monkeapi.ddns.net/random</a></code>
+        </div>
+
+        <button id="monkeButton">Get a random monke GIF</button>
+
+        <img src="" id="monke">
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+  
+    <script>
+        $("#monkeButton").click(function(){
+            $.get("/random", function(data) {
+                $("img#monke").attr("src", data.message);
+            })
+        })
+    </script>
+</body>
+</html>
