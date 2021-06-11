@@ -1,4 +1,4 @@
-# 🦧 Monke Gif API
+# 🦧 Monke GIF API
 
 A simple API for all the monkes out there to enjoy.
 
